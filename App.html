@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app="App">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css" rel="stylesheet" type="text/css" />
+<link href='https://fonts.googleapis.com/css?family=Lato:400,300,300italic,100' rel='stylesheet' type='text/css'>
+  <title></title>
+</head>
+<body>
+    <ng-view></ng-view>
+  <footer></footer>
+  <script src="/js/jquery-2.1.4.min.js"></script>
+  <script src="/js/angular.min.js"></script>
+  <script src="/js/angular-route.min.js"></script>
+  <script src="/js/App/AppGlobalConfig.js"></script>
+<!--Servicios y componentes reutilizables-->
+<script src="/js/App/ComponentesReusables/Interceptors/AuthInterceptor.js"></script>
+<script src="/js/App/ComponentesReusables/Interceptors/InterceptorRutasAuth.js"></script>
+<script src="/js/App/ComponentesReusables/Services/LoginService.js"></script>
+<!--Fin Servicios y componentes reutilizables-->
+<!--Componentes externos-->
+    <script src="/js/angular-animate.min.js"></script>
+    <script src="/js/App/ExternalPlugins/loading-bar.js"></script>
+    <script src="/js/App/ExternalPlugins/angular-local-storage.min.js"></script>
+    <script src="/js/App/ExternalPlugins/sticky.js"></script>
+<!--Fin Componentes externos-->
+<!--App principal-->
+    <script src="/js/App/PrincipalApp/PrincipalApp.js"></script>
+<!--Fin App principal-->
+</body>
+</html>

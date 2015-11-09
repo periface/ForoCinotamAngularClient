@@ -1,0 +1,284 @@
+/*
+
+
+  ///////////////////////////////////////////////////////
+  //////////////////EL PERI!!////////////////////////////
+  ///////////////////////////////////////////////////////
+
+
+*/
+
+/*
+Configuración general
+*/
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;;
+
+}
+html{
+  font-family: 'Lato', sans-serif;
+  background-color: #fff;
+  font-weight: 300;
+  font-size: 20px;
+  text-rendering: optimizeLegibility;
+}
+.row{
+  max-width:1140px;
+  margin:0 auto;
+}
+/*
+Fin configuración general
+*/
+
+/*Titulos*/
+h1, h2,h3{
+  font-size:220%;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+h1{
+  margin-top: 0px;
+  margin-bottom: 10px;
+  color: #fff;
+  word-spacing: 4px;
+    letter-spacing: 1px;
+}
+h2{
+  font-size: 180%;
+  word-spacing: 2px;
+  text-align: center;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+}
+h2:after{
+  display: block;
+  content: " ";
+  height: 2px;
+  background-color:  #e67e22;
+  width: 100px;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+h3{
+  font-size: 110%;
+  margin-bottom: 15px;
+}
+/*Fin Titulos*/
+
+/*
+Componentes reusables
+*/
+.texto-largo{
+  line-height: 145%;
+  width: 70%;
+  margin-left: 15%;
+  text-align: justify;
+}
+.box{
+  padding: 1%;
+}
+.box p{
+  font-size: 90%;
+  line-height: 145%;
+}
+section{
+  padding: 80px 0;
+}
+.btn:link,
+.btn:visited{
+  display: inline-block;
+  padding:10px 30px;
+  font-weight:300;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.2s,border 0.2s, color 0.2s;
+}
+.btn:hover,.btn:active{
+ background-color: #cf6e17;
+}
+.btn-primario:link,
+.btn-primario:visited{
+  background-color: #e67e22;
+  border:1px solid #e67e22;
+  color: #fff;
+  margin-right: 20px;
+}
+.btn-fantasma:link,
+.btn-fantasma:visited{
+  border:1px solid #e67e22;
+  color: #e67e22;
+}
+.btn-primario:hover,
+.btn-primario:active{
+  background-color: #cf6e17;
+  border:1px solid #e67e22;
+}
+.btn-fantasma:hover,
+.btn-fantasma:active{
+  border:1px solid #cf6e17;
+  color: #fff;
+}
+/*Fin
+Componentes reusables
+*/
+
+
+/*
+  Cabecera
+*/
+header{
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size:cover;
+  height: 100vh;
+  transition: background-image 0.5s
+  background-attachment: scroll;
+}
+
+header.inicio{
+background-image: linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)), url(/img/hero.jpg);
+
+}
+
+header.cursos{
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)), url(/img/heroCursos.jpg);
+}
+
+
+.hero-text-box{
+  position: absolute;
+  width: 1140px;
+  top: 50%;
+  left:50%;
+  transform:translate(-50%, -50%);
+}
+.logo{
+  height: 100px;
+  width: auto;
+  float: left;
+  margin-top: 20px;
+}
+.menuPrincipal{
+  float: right;
+  list-style: none;
+  margin-top: 60px;
+}
+.menuPrincipal li{
+  display: inline-block;
+  margin-left: 40px;
+}
+.menuPrincipal li a:visited,
+.menuPrincipal li a:link{
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 90%;
+  border-bottom: 2px solid transparent;
+  transition: border-bottom 0.2s;
+  padding: 8px 0;
+}
+.menuPrincipal li a:hover,
+.menuPrincipal li a:active{
+  border-bottom: 2px solid #cf6e17;
+}
+.menuDosContenedor{
+      padding-top: 30px;
+      padding-bottom: 30px;
+      width: 100%;
+      background-color: gray;
+      position: -webkit-sticky;
+      z-index: 1;
+}
+.pegadizo{
+  position:fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  border-top: 0;
+}
+.navegacionDos{
+      list-style: none;
+      margin-left: 10%;
+      margin-right: 10%;
+      text-align: center;
+}
+.navegacionDos li{
+  display: inline-block;
+  margin-right: 30px;
+}
+.navegacionDos li a:visited,
+.navegacionDos li a:link{
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 90%;
+  border-bottom: 2px solid transparent;
+  transition: border-bottom 0.2s;
+  padding: 8px 0;
+}
+.navegacionDos li a:hover,
+.navegacionDos li a:active{
+  border-bottom: 2px solid #e67e22;
+}
+
+/*
+  Fin Cabecera
+*/
+
+
+/*
+Quienes
+*/
+.seccion-quienes .texto-largo{
+margin-bottom: 50px;
+
+}
+
+/*
+Fin Quienes
+*/
+/*Portafolio*/
+.queOfrecemos{
+}
+.cursoTitulo{
+  position:absolute;
+  padding: 0;
+  z-index: 1;
+  font-size: 150%;
+  font-weight: 300;
+  color: #fff;
+  text-align: center;
+}
+.portafolio{
+
+  list-style: none;
+  width: 100%;
+}
+.portafolio li{
+  display: block;
+  float: left;
+  width: 25%;
+}
+.contenido{
+  width: 100%;
+  margin: 0;
+  overflow: hidden;
+  background: #000;
+
+}
+.contenido img{
+  opacity: 0.7;
+  width: 100%;
+  height: auto;
+  transform: scale(1.15);
+  transition: transform 0.2s, opacity 0.5s;
+  z-index: 2;
+}
+.contenido img:hover{
+  opacity: 1;
+  transform: scale(1.03);
+}

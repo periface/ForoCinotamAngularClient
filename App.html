@@ -3,21 +3,81 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.2/css/materialize.min.css">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css" rel="stylesheet" type="text/css" />
+<link href="js/App/ExternalPlugins/loading-bar.css" rel="stylesheet" type="text/css" />
+<link href="css/EstiloAppPrincipal/Estilo.css" rel="stylesheet" type="text/css" />
+ <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/2.0/animate.min.css">
 <link href='https://fonts.googleapis.com/css?family=Lato:400,300,300italic,100' rel='stylesheet' type='text/css'>
+ <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <title></title>
+  <style>
+  html{
+    font-family: 'Lato', sans-serif;
+    background-color: #fff;
+    font-weight: 300;
+    text-rendering: optimizeLegibility;
+  }</style>
+  <style>
+    [ng-click],
+    [data-ng-click],
+    [x-ng-click] {
+        cursor: pointer;
+    }
+</style>
 </head>
 <body>
-    <ng-view></ng-view>
+  <header>
+        <nav>
+      <div ng-controller="menuPrincipal" class="nav-wrapper">
+        <a href="/#/Inicio" class="brand-logo">Foro Cinotam</a>
+        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">reorder</i>Menu</a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="#Inicio">Inicio</a></li>
+          <li><a href="#Cursos">Cursos</a></li>
+          <li><a href="#Cursos">Discusiones</a></li>
+          <li ng-show="usuario.logged"><a href="#MisCursos">Mis Cursos</a></li>
+          <li ng-show="usuario.logged"><a href="#MiPanel">Mis Panel de Control</a></li>
+          <li ng-show="!usuario.logged"><a href="#Registro">Registrarse</a></li>
+          <li ng-show="!usuario.logged"><a href="#Login">Iniciar Sesión</a></li>
+          <li ng-show="usuario.logged"><a ng-click="LogOut()">Cerrar Sesión</a></li>
+        </ul>
+        <ul class="side-nav" id="mobile-demo">
+          <li><a href="#Inicio">Inicio</a></li>
+          <li><a href="#Cursos">Cursos</a></li>
+          <li><a href="#Cursos">Discusiones</a></li>
+          <li ng-show="usuario.logged"><a href="#MisCursos">Mis Cursos</a></li>
+          <li ng-show="usuario.logged"><a href="#MiPanel">Mis Panel de Control</a></li>
+          <li ng-show="!usuario.logged"><a href="#Registro">Registrarse</a></li>
+          <li ng-show="!usuario.logged"><a href="#Login">Iniciar Sesión</a></li>
+          <li ng-show="usuario.logged"><a ng-click="LogOut()">Cerrar Sesión</a></li>
+        </ul>
+      </div>
+    </nav>
+
+  </header>
+  <main>
+    <data-ng-view
+          class="slide-animation">
+        <!-- Main Content -->
+        </data-ng-view>
+  </main>
   <footer></footer>
   <script src="/js/jquery-2.1.4.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.2/js/materialize.min.js"></script>
+  <script>
+$(".button-collapse").sideNav();
+
+  </script>
   <script src="/js/angular.min.js"></script>
+
   <script src="/js/angular-route.min.js"></script>
   <script src="/js/App/AppGlobalConfig.js"></script>
 <!--Servicios y componentes reutilizables-->
 <script src="/js/App/ComponentesReusables/Interceptors/AuthInterceptor.js"></script>
 <script src="/js/App/ComponentesReusables/Interceptors/InterceptorRutasAuth.js"></script>
 <script src="/js/App/ComponentesReusables/Services/LoginService.js"></script>
+<script src="/js/App/ComponentesReusables/Services/CursosClientService.js"></script>
 <!--Fin Servicios y componentes reutilizables-->
 <!--Componentes externos-->
     <script src="/js/angular-animate.min.js"></script>
@@ -27,6 +87,13 @@
 <!--Fin Componentes externos-->
 <!--App principal-->
     <script src="/js/App/PrincipalApp/PrincipalApp.js"></script>
+    <script src="/js/App/PrincipalApp/Controllers/MenuPrincipal.js"></script>
+        <script src="/js/App/PrincipalApp/Controllers/LoginController.js"></script>
+        <script src="/js/App/PrincipalApp/Controllers/RegistroController.js"></script>
+        <script src="/js/App/PrincipalApp/Controllers/InicioController.js"></script>
+          <script src="/js/App/PrincipalApp/Controllers/CursoController.js"></script>
+          <script src="/js/App/PrincipalApp/Directives/MaterializeDirectives.js"></script>
+
 <!--Fin App principal-->
 </body>
 </html>

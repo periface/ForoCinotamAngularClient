@@ -1,0 +1,31 @@
+<div class="row">
+    <div class="col s12">
+      <h3>Ultimos Cursos</h3>
+
+    </div>
+</div>
+<div class="row" >
+  <div class="col s8">
+  <div class="slider" slider>
+      <ul slider class="slides">
+        <li slideritem ng-repeat="curso in cursos">
+          <img ng-src={{curso.imagen}}>
+          <div class="caption center-align">
+            <h3  ng-bind="curso.titulo">
+            </h3>
+            <h5 class="light grey-text text-lighten-3" ng-bind="curso.contenido">Here's our small slogan.</h5>
+          </div>
+        </li>
+      </ul>
+    </div>
+</div>
+</div>
+<div class="row">
+    <div class="col s12">
+      <h3>Ultimas Discusiones</h3>
+
+    </div>
+</div>
+<div class="row" >
+
+</div>

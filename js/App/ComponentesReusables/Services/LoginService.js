@@ -16,23 +16,34 @@
       }
       return promise;
     }
+    //Funcion privada
+    var _directLogin = function(loginData){
+          var deferred = $q.defer();
+          var promise = deferred.promise;
+            var data = "grant_type=password&username=" + loginData.username + "&password=" + loginData.password;
+            $http.post(webApiEndPoint + "Token",
+           data, { headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' } }).success(function(d){
+             deferred.resolve(d);
+           }).error(function(d){
+             deferred.reject("Usuario o contraseña invalida");
+           });
+           return promise;
+    }
     var _iniciarSesion = function (loginData,returnUrl) {
-        var data = "grant_type=password&username=" + loginData.username + "&password=" + loginData.password;
-        var response = $http.post(webApiEndPoint + "Token", data, { headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' } });
-        response.then(function (d) {
-            _usuario.logged = true;
-            _roles().then(function(d){
-                localStorageService.set("rolesData",{roles: d.Roles});
-            }).catch(function(err){
-                alert(err);
-            });
-            localStorageService.set("tokenData",{ token: d.data.access_token,userName:loginData.username});
-            if (returnUrl == undefined) {
-                $location.path("/Inicio")
-            }
-            else {
-                $location.path(returnUrl);
-            }
+        _directLogin(loginData).then(function(d){
+          _usuario.logged = true;
+          _roles().then(function(d){
+              localStorageService.set("rolesData",{roles: d.Roles});
+          }).catch(function(err){
+              alert(err);
+          });
+          localStorageService.set("tokenData",{ token: d.access_token,userName:loginData.username});
+          if (returnUrl == undefined) {
+              $location.path("/Inicio")
+          }
+          else {
+              $location.path(returnUrl);
+          }
         });
     }
     var _registrar = function (loginData) {

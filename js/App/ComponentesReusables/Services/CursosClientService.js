@@ -31,6 +31,17 @@ var cursosClientService = ["$q","$http",function($q,$http){
       });
       return promise;
   }
+  var _cargaCursoSlug = function(id,slug){
+    var deferred = $q.defer();
+    var promise = deferred.promise;
+    var url = webApiEndPoint + "api/Cursos/Curso/"+id;
+    $http.get(url).success(function(data){
+      deferred.resolve(data);
+    }).error(function(err){
+      deferred.reject(err);
+    });
+    return promise;
+  }
   var _cargaCursos = function (numero) {
     var deferred = $q.defer();
     var promise = deferred.promise;
@@ -50,6 +61,7 @@ var cursosClientService = ["$q","$http",function($q,$http){
       return promise;
   }
   cursosService.cargaCurso = _cargaCurso;
+  cursosService.cargaCursoSlug = _cargaCursoSlug;
   cursosService.cargaCursos = _cargaCursos;
   cursosService.cargaCursosLista = _cargaCursosLista;
   cursosService.cargaContenidosCursoLista = _cargaContenidosCursoLista;

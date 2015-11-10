@@ -1,6 +1,7 @@
 ﻿var interceptorAutenticacion = ["$q", "$location","localStorageService", function ($q, $location,localStorageService) {
 
     var _request = function (config) {
+
         config.headers = config.headers || {};
         var authData = localStorageService.get("tokenData");
         if (authData) {

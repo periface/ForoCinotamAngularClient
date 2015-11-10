@@ -120,6 +120,12 @@ section{
   border:1px solid #cf6e17;
   color: #fff;
 }
+.boxFix{
+  display: inline-block;
+  margin: 0 auto;
+  width: 100%;
+  padding: 30px 0;
+}
 /*Fin
 Componentes reusables
 */

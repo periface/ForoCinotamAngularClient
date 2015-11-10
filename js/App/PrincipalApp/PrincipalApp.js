@@ -1,4 +1,4 @@
-var App = angular.module(principalApp, ["ngRoute", "angular-loading-bar", "LocalStorageModule", 'ngAnimate',"sticky"]);
+var App = angular.module(principalApp, ["ngRoute", "angular-loading-bar", "LocalStorageModule", 'ngAnimate',"sticky","ui.materialize",'truncate','ngSanitize']);
 
 App.factory("$loginService",loginService);
 App.factory("interceptorAutenticacion", interceptorAutenticacion);
@@ -32,6 +32,15 @@ var configuracion = function ($routeProvider, $httpProvider) {
             rolesPermitidos:[],
             requiereSesion:false,
         },
+    }).when("/MiPanel", {
+        title: "Panel de Control",
+        templateUrl: rutaArchivosApp + "PanelControl/Index.html",
+        caseInsensitiveMatch: true,
+        controller: "panelController",
+        reglas:{
+            rolesPermitidos:[],
+            requiereSesion:true,
+        },
     }).when("/Registro", {
         title: "Registro",
         templateUrl: rutaArchivosApp + "Cuentas/Registro.html",
@@ -55,6 +64,8 @@ var configuracion = function ($routeProvider, $httpProvider) {
     $httpProvider.interceptors.push("interceptorAutenticacion");
 };
 App.run(["$rootScope", "$route","$location","$loginService","interceptorRutasAuth", function ($rootScope,$route,$location,$loginService,interceptorRutasAuth) {
+
+
     //$loginService.cargaInfo();
     $rootScope.$on("$routeChangeSuccess", function (d) {
         document.title = $route.current.title;

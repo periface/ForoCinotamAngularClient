@@ -1,5 +1,5 @@
 ﻿//GLOBAL CONFIGS
-var webApiEndPoint = "http://148.237.42.53/";
+var webApiEndPoint = "http://192.168.1.161/";
 var LandingPageApp = "landing";
 var principalApp = "App";
 var rutaArchivosWeb = "Site/";

@@ -1,5 +1,39 @@
 <!DOCTYPE html>
 <html ng-app="App">
+<!--
+===================================================================
+== Traido humildemente para ustedes por ALAN(PERI)=================
+==============tH3 Cr4py D3v3l0p3r==================================
+
+ }}}}}}}}}}}}}}   }}}}}}}}}}}}}}
+
+   ?? ¿¿?? ¿¿      ?? ¿¿?? ¿¿            //////
+   ?? ¿¿?? ¿¿      ?? ¿¿?? ¿¿        //////
+   ?? 0000 ¿¿------?? 0000 ¿¿/////////
+   ?? ¿¿?? ¿¿      ?? ¿¿?? ¿¿
+   ?? ¿¿?? ¿¿      ?? ¿¿?? ¿¿                       <<<<<<<<<<<<<<<<
+                                                  <<<<<<<<<<<<<<<<<<<<
+            ?? ¿¿                                 <<<<<3N C0D1GO<<<<<<
+            ?? ¿¿                                 <<<<<<H4BL4M0S<<<<<<
+            ?? ¿¿                                 <<<<<<<<<<<<<<<<<<<<
+          ?? ¿¿                             <<<<< <<<<<<<<<<<<<<<<<<<<
+        ?? ¿¿                             <<<<<     <<<<<<<<<<<<<<<<
+        ?? ¿¿?? ¿¿?? ¿¿                 <<<<<
+                                      <<<<<
+    ()()()()()()()()()()()()()()    <<<<<
+    1111111111111111111111111111  <<<<<<
+    ()()()()()()()()()()()()()()
+
+    }}}}}}}}}}}}}}{{{{{{{{{{{{{{
+    {{{{{{{{{{{{{{{{{{{{{{{{{{{{
+        }}}}}}}}}}}}}}}}}}}}
+          }}}}}}}}}}}}}}}}
+             }}}}}}}}}}
+                }}}}}
+================NO CEO FRIENDLY :()================================
+==============  CODIGO DE ANGULAR NO LICENCIADO  ==================
+================  SI TE SIRVE COPIALO  ============================
+-->
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,28 +64,30 @@
   <header>
         <nav>
       <div ng-controller="menuPrincipal" class="nav-wrapper">
-        <a href="/#/Inicio" class="brand-logo">Foro Cinotam</a>
-        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">reorder</i>Menu</a>
-        <ul class="right hide-on-med-and-down">
-          <li><a href="#Inicio">Inicio</a></li>
-          <li><a href="#Cursos">Cursos</a></li>
-          <li><a href="#Cursos">Discusiones</a></li>
-          <li ng-show="usuario.logged"><a href="#MisCursos">Mis Cursos</a></li>
-          <li ng-show="usuario.logged"><a href="#MiPanel">Mis Panel de Control</a></li>
-          <li ng-show="!usuario.logged"><a href="#Registro">Registrarse</a></li>
-          <li ng-show="!usuario.logged"><a href="#Login">Iniciar Sesión</a></li>
-          <li ng-show="usuario.logged"><a ng-click="LogOut()">Cerrar Sesión</a></li>
-        </ul>
-        <ul class="side-nav" id="mobile-demo">
-          <li><a href="#Inicio">Inicio</a></li>
-          <li><a href="#Cursos">Cursos</a></li>
-          <li><a href="#Cursos">Discusiones</a></li>
-          <li ng-show="usuario.logged"><a href="#MisCursos">Mis Cursos</a></li>
-          <li ng-show="usuario.logged"><a href="#MiPanel">Mis Panel de Control</a></li>
-          <li ng-show="!usuario.logged"><a href="#Registro">Registrarse</a></li>
-          <li ng-show="!usuario.logged"><a href="#Login">Iniciar Sesión</a></li>
-          <li ng-show="usuario.logged"><a ng-click="LogOut()">Cerrar Sesión</a></li>
-        </ul>
+
+          <a href="/#/Inicio" class="brand-logo hide-on-med-and-down left">Foro Cinotam</a>
+            <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">reorder</i></a>
+            <ul class="right hide-on-med-and-down">
+              <li><a href="#Inicio">Inicio</a></li>
+              <li><a href="#Cursos">Cursos</a></li>
+              <li><a href="#Cursos">Discusiones</a></li>
+              <li ng-show="usuario.logged"><a href="#MisCursos">Mis Cursos</a></li>
+              <li ng-show="usuario.logged"><a href="#MiPanel">Mis Panel de Control</a></li>
+              <li ng-show="!usuario.logged"><a href="#Registro">Registrarse</a></li>
+              <li ng-show="!usuario.logged"><a href="#Login">Iniciar Sesión</a></li>
+              <li ng-show="usuario.logged"><a ng-click="LogOut()">Cerrar Sesión</a></li>
+            </ul>
+            <ul class="side-nav" id="mobile-demo">
+              <li><a href="#Inicio">Inicio</a></li>
+              <li><a href="#Cursos">Cursos</a></li>
+              <li><a href="#Cursos">Discusiones</a></li>
+              <li ng-show="usuario.logged"><a href="#MisCursos">Mis Cursos</a></li>
+              <li ng-show="usuario.logged"><a href="#MiPanel">Mis Panel de Control</a></li>
+              <li ng-show="!usuario.logged"><a href="#Registro">Registrarse</a></li>
+              <li ng-show="!usuario.logged"><a href="#Login">Iniciar Sesión</a></li>
+              <li ng-show="usuario.logged"><a ng-click="LogOut()">Cerrar Sesión</a></li>
+            </ul>
+
       </div>
     </nav>
 
@@ -62,17 +98,49 @@
         <!-- Main Content -->
         </data-ng-view>
   </main>
-  <footer></footer>
+
+  <style media="screen">
+    footer.page-footer{
+      background-color: gray;
+    }
+
+  </style>
+  <footer class="page-footer">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Foro Cinotam</h5>
+                <p class="grey-text text-lighten-4">¡Compartiendo el conocimiento con iniciativa!</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links Rapidos</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="#!">Inicio</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Cursos</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Mis Cursos</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Iniciar Sesión</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Registro</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            Copyright (c) 2015 Cinotam Todos los Derechos Reservados.
+            <a class="grey-text text-lighten-4 right" target="_blank" href="http://www.cinotam.uat.edu.mx">Cinotam</a>
+            </div>
+          </div>
+        </footer>
   <script src="/js/jquery-2.1.4.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.2/js/materialize.min.js"></script>
   <script>
 $(".button-collapse").sideNav();
-
   </script>
   <script src="/js/angular.min.js"></script>
 
   <script src="/js/angular-route.min.js"></script>
   <script src="/js/App/AppGlobalConfig.js"></script>
+    <script src="/js/angular-sanitize.min.js"></script>
 <!--Servicios y componentes reutilizables-->
 <script src="/js/App/ComponentesReusables/Interceptors/AuthInterceptor.js"></script>
 <script src="/js/App/ComponentesReusables/Interceptors/InterceptorRutasAuth.js"></script>
@@ -84,6 +152,8 @@ $(".button-collapse").sideNav();
     <script src="/js/App/ExternalPlugins/loading-bar.js"></script>
     <script src="/js/App/ExternalPlugins/angular-local-storage.min.js"></script>
     <script src="/js/App/ExternalPlugins/sticky.js"></script>
+    <script src="/js/App/ExternalPlugins/Truncate.js"></script>
+    <script src="/js/App/PrincipalApp/Directives/angular-materialize.js"></script>
 <!--Fin Componentes externos-->
 <!--App principal-->
     <script src="/js/App/PrincipalApp/PrincipalApp.js"></script>
@@ -92,7 +162,6 @@ $(".button-collapse").sideNav();
         <script src="/js/App/PrincipalApp/Controllers/RegistroController.js"></script>
         <script src="/js/App/PrincipalApp/Controllers/InicioController.js"></script>
           <script src="/js/App/PrincipalApp/Controllers/CursoController.js"></script>
-          <script src="/js/App/PrincipalApp/Directives/MaterializeDirectives.js"></script>
 
 <!--Fin App principal-->
 </body>

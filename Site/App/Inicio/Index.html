@@ -1,31 +1,35 @@
-<div class="row">
-    <div class="col s12">
-      <h3>Ultimos Cursos</h3>
+<div class="container">
+  <div class="row">
+      <div class="col s8">
+        <h1>Ultimos Cursos</h1>
+        <div class="row" ng-repeat="curso in cursos">
+            <article class="col s12">
+              <header>
+                  <h1><a href="#/Curso/{{curso.idCurso}}/{{curso.urlSlug}}">{{curso.titulo}}</a></h1>
+              </header>
+              <div class="row">
+                  <div class="col s12">
+                    <hr>
+                    <p><i class="tiny material-icons">today</i>Fecha de inicio: {{curso.fecha | date:'yyyy-MM-dd'}}  ||  <i class="tiny material-icons">perm_identity</i>Facilitador: {{curso.nombreFacilitador}} </p>
+                    <hr>
+                  </div>
+              </div>
+              <div class="row">
+                <div class="col s12" ng-bind-html="curso.contenido | characters:300" >
 
-    </div>
-</div>
-<div class="row" >
-  <div class="col s8">
-  <div class="slider" slider>
-      <ul slider class="slides">
-        <li slideritem ng-repeat="curso in cursos">
-          <img ng-src={{curso.imagen}}>
-          <div class="caption center-align">
-            <h3  ng-bind="curso.titulo">
-            </h3>
-            <h5 class="light grey-text text-lighten-3" ng-bind="curso.contenido">Here's our small slogan.</h5>
-          </div>
-        </li>
-      </ul>
-    </div>
-</div>
-</div>
-<div class="row">
-    <div class="col s12">
-      <h3>Ultimas Discusiones</h3>
-
-    </div>
-</div>
-<div class="row" >
-
+                </div>
+              </div>
+            </article>
+        </div>
+      </div>
+      <div class="col s4">
+        <h1>Ultimas Discusiones</h1>
+        <ul class="collection">
+         <li class="collection-item"><div>Como inyectar dependencias en web apis<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li>
+         <li class="collection-item"><div>Error de referncia nulla<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li>
+         <li class="collection-item"><div>Ayuda para instalar el software<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li>
+         <li class="collection-item"><div>Mejorar los temas<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li>
+       </ul>
+      </div>
+  </div>
 </div>

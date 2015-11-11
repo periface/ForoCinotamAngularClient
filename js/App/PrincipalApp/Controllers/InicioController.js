@@ -3,12 +3,17 @@ App.controller("inicioController",["$scope","$cursosClientService",function($sco
     $scope.cargandoDiscusiones = true;
     $scope.imgCarga = randomImg();
     $scope.imgCarga2 = randomImg();
-    console.log($scope.cargandoCursos);
-    console.log($scope.cargandoDiscusiones);
+    $scope.mensaje = $scope.cargaText;
     $scope.cursos = {};
     $cursosClientService.cargaCursos(3).then(function(d){
-      $scope.cursos = d;
-$scope.cargandoCursos  = false;
-$scope.cargandoDiscusiones = false;
+    $scope.cursos = d;
+    $scope.cargandoCursos  = false;
+    $scope.cargandoDiscusiones = false;
+    }).catch(function(d){
+      if(d==="errorTiempo"){
+        //$scope.imgCarga = imgLentoError();
+        //$scope.imgCarga2 = imgLentoError();
+        $scope.mensaje = $scope.lentoText;
+      }
     });
 }]);

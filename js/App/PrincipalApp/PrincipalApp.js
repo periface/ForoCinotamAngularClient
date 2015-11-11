@@ -51,6 +51,15 @@ var configuracion = function ($routeProvider, $httpProvider) {
             rolesPermitidos:[],
             requiereSesion:true,
         },
+    }).when("/Admin", {
+        title: "Administracion",
+        templateUrl: rutaArchivosApp + "PanelControl/Admin.html",
+        caseInsensitiveMatch: true,
+        controller: "adminController",
+        reglas:{
+            rolesPermitidos:["Administrador"],
+            requiereSesion:true,
+        },
     }).when("/Registro", {
         title: "Registro",
         templateUrl: rutaArchivosApp + "Cuentas/Registro.html",
@@ -75,7 +84,8 @@ var configuracion = function ($routeProvider, $httpProvider) {
 };
 App.run(["$rootScope", "$route","$location","$loginService","interceptorRutasAuth", function ($rootScope,$route,$location,$loginService,interceptorRutasAuth) {
 
-
+    $rootScope.cargaText= cargaText;
+    $rootScope.lentoText = lentoText;
     //$loginService.cargaInfo();
     $rootScope.$on("$routeChangeSuccess", function (d) {
         document.title = $route.current.title;

@@ -3,12 +3,12 @@ App.directive("acceso",["interceptorRutasAuth","$loginService",function(intercep
   return{
     restrict: "A",
     link: function(scope,elemento,attributos){
-
+      console.log("Directiva");
       var hacerVisible = function(){
-        elemento.removeClass("hidden");
+        elemento.removeClass("hide");
       },
       hacerInvisible = function(){
-        elemento.addClass("hidden");
+        elemento.addClass("hide");
       },
       determinarVisibilidad = function(reset){
         var resultado;

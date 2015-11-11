@@ -6,16 +6,16 @@
 
         <div class="col l4 s12">
           <div class="card-panel grey lighten-5 z-depth-1">
-            <div class="row valign-wrapper">
-              <div class="col s4">
+            <div class="row valign-wrapper rowNoMargen" >
+              <div class="col s3">
                 <img src="http://www.gifwave.com/media/97580_shiba-inu-dog-transparent-transparency-doge.gif" alt="" class="circle responsive-img"> <!-- notice the "circle" class -->
 
               </div>
-              <div class="col s8">
+              <div class="col s9">
                 <span class="black-text">
                   {{usuario.nombre}}
                 </span>
-                <div class="row">
+                <div class="row rowNoMargen">
                   <div class="col s12">
                     <a ng-click="pagina='imagen'">Cambiar Imagen</a>
                   </div>
@@ -27,13 +27,15 @@
           <li class="collection-item"><div>Mis Notificaciones<a ng-click="pagina='notificaciones'" class="secondary-content"><i class="material-icons">send</i></a></div></li>
          <li class="collection-item"><div>Mis Datos<a ng-click="pagina='datos'" class="secondary-content"><i class="material-icons">send</i></a></div></li>
          <li class="collection-item"><div>Mis Cursos<a ng-click="pagina='misCursos'" class="secondary-content"><i class="material-icons">send</i></a></div></li>
-         <li class="collection-item"><div>Crear un nuevo curso<a ng-click="pagina='crear'" class="secondary-content"><i class="material-icons">send</i></a></div></li>
+         <li class="collection-item"><div>Sugerir Discusión<a ng-click="pagina='crear'" class="secondary-content"><i class="material-icons">send</i></a></div></li>
+        <li acceso="Administrador" class="collection-item"><div>Administración<a href="#Admin" class="secondary-content"><i class="material-icons">send</i></a></div></li>
        </ul>
         </div>
         <div class="col l8 s12" ng-switch on="pagina">
               <div ng-switch-when="notificaciones" class="row">
                 <h4>Ultimas notificaciones</h3>
-
+                  <div class="card-panel lime lighten-2"><i class="material-icons">error_outline</i>  Se ha creado una nueva discusión en el tema ... <a href="#" class="btn right">Ok</a><a href="#" >Ver</a></div>
+                  <div class="card-panel lime lighten-2"><i class="material-icons">done</i>  Se ha aprobado tu propuesta de discusión en el tema ... <a href="#" class="btn right">Ok</a><a href="#" >Ver</a></div>
               </div>
               <form ng-submit=guardarImagen(imagen) ng-switch-when="imagen" class="row">
                 <div class="col s12">

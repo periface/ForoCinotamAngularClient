@@ -1,5 +1,6 @@
 App.controller("panelController",["$scope","$loginService","$cursosAdminService",function($scope,$loginService,$cursosAdminService){
   $scope.usuario = $loginService.cargaInfo();
+  console.log($scope.usuario);
   $scope.pagina = "notificaciones"
   $scope.guardarImagen = function(imagen){
       $loginService.imagenPerfil(imagen).then(function(d){

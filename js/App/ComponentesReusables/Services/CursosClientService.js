@@ -42,7 +42,9 @@ var cursosClientService = ["$q","$http",function($q,$http){
     });
     return promise;
   }
+
   var _cargaCursos = function (numero) {
+    var startTime = new Date().getTime();
     var deferred = $q.defer();
     var promise = deferred.promise;
     var url;
@@ -56,7 +58,12 @@ var cursosClientService = ["$q","$http",function($q,$http){
       $http.get(url).success(function(d){
         deferred.resolve(d);
       }).error(function(){
-        deferred.reject("Error");
+        var respTime = new Date().getTime() - startTime;
+      if(respTime >= 5000){
+          deferred.reject("errorTiempo")
+      } else{
+          deferred.reject("otro");
+      }
       });
       return promise;
   }

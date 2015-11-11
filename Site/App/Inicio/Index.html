@@ -1,7 +1,13 @@
 <div class="container">
   <div class="row">
-      <div class="col s8">
+      <div class="col l8 m12 s12">
         <h1>Ultimos Cursos</h1>
+        <div class="row">
+              <div class="col s12" ng-show="cargandoCursos">
+                <img ng-src="{{imgCarga}}" style="width:200px;height:200px;">
+                <h4> Cargando.... </h4>
+              </div>
+        </div>
         <div class="row" ng-repeat="curso in cursos">
             <article class="col s12">
               <header>
@@ -10,7 +16,7 @@
               <div class="row">
                   <div class="col s12">
                     <hr>
-                    <p><i class="tiny material-icons">today</i>Fecha de inicio: {{curso.fecha | date:'yyyy-MM-dd'}}  ||  <i class="tiny material-icons">perm_identity</i>Facilitador: {{curso.nombreFacilitador}} </p>
+                    <p><i class="tiny material-icons">today</i> Fecha de inicio: <a href="#Cursos/fecha={{curso.fecha | date:'yyyy-MM-dd'}}">{{curso.fecha | date:'yyyy-MM-dd'}}</a> ||  <i class="tiny material-icons">perm_identity</i>Facilitador: {{curso.nombreFacilitador}} </p>
                     <hr>
                   </div>
               </div>
@@ -18,12 +24,26 @@
                 <div class="col s12" ng-bind-html="curso.contenido | characters:300" >
 
                 </div>
+                <!--<div class="col s12">
+                  <a class="btn right" href="#">Mas información</a>
+                </div>-->
               </div>
             </article>
         </div>
+        <div class="row">
+          <div class="col s12">
+            <a href="#Cursos" class="btn">Mas cursos</a>
+          </div>
+        </div>
       </div>
-      <div class="col s4">
+      <div class="col l4 m12 s12">
         <h1>Ultimas Discusiones</h1>
+        <div class="row">
+              <div class="col s12" ng-show="cargandoCursos">
+                <img ng-src="{{imgCarga}}" style="width:200px;height:200px;">
+                <h4> Cargando.... </h4>
+              </div>
+        </div>
         <ul class="collection">
          <li class="collection-item"><div>Como inyectar dependencias en web apis<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li>
          <li class="collection-item"><div>Error de referncia nulla<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li>

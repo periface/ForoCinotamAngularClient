@@ -39,7 +39,7 @@
           });
           localStorageService.set("tokenData",{ token: d.access_token,userName:loginData.username});
           if (returnUrl == undefined) {
-              $location.path("/Inicio")
+              $location.path("/MiPanel")
           }
           else {
               $location.path(returnUrl);
@@ -78,6 +78,22 @@
             return _usuario;
         }
     }
+    var _imagenPerfil = function(imagen){
+      var fd = new FormData();
+      fd.append("file",imagen);
+      var deferred = $q.defer();
+      var promise = deferred.promise;
+      var usuario = _cargaInfo();
+      $http.post(webApiEndPoint+"api/Usuarios/Imagen?nombre="+usuario.nombre,fd,{
+        transformRequest: angular.identity,
+        headers:{"Content-Type":undefined}
+      }).success(function(d){
+        deferred.resolve(d);
+      }).error(function(d){
+        deferred.reject(d);
+      });
+      return promise;
+    }
     var loginServiceFactory = {};
     loginServiceFactory.roles = _roles;
     loginServiceFactory.usuario = _usuario;
@@ -85,5 +101,6 @@
     loginServiceFactory.registrar = _registrar;
     loginServiceFactory.cargaInfo = _cargaInfo;
     loginServiceFactory.cerrarSesion = _cerrarSesion;
+    loginServiceFactory.imagenPerfil = _imagenPerfil;
     return loginServiceFactory;
 }];

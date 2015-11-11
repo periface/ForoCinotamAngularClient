@@ -4,6 +4,7 @@ App.factory("$loginService",loginService);
 App.factory("interceptorAutenticacion", interceptorAutenticacion);
 App.factory("interceptorRutasAuth",interceptorRutas);
 App.factory("$cursosClientService",cursosClientService);
+App.factory("$cursosAdminService",cursosAdminService);
 var configuracion = function ($routeProvider, $httpProvider) {
     $routeProvider.when("/Inicio", {
         title: "Cursos",
@@ -19,6 +20,15 @@ var configuracion = function ($routeProvider, $httpProvider) {
         templateUrl: rutaArchivosApp + "Inicio/Curso.html",
         caseInsensitiveMatch: true,
         controller: "cursoController",
+        reglas:{
+            rolesPermitidos:[],
+            requiereSesion:false,
+        },
+    }).when("/Cursos", {
+        title: "Curso",
+        templateUrl: rutaArchivosApp + "Inicio/Cursos.html",
+        caseInsensitiveMatch: true,
+        controller: "cursosController",
         reglas:{
             rolesPermitidos:[],
             requiereSesion:false,

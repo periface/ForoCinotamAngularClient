@@ -4,32 +4,105 @@
       <h1>Mi Panel de Control</h2>
       <div class="row">
 
-        <div class="col s4">
+        <div class="col l4 s12">
           <div class="card-panel grey lighten-5 z-depth-1">
             <div class="row valign-wrapper">
-              <div class="col s2">
-                <img src="http://materializecss.com/images/yuna.jpg" alt="" class="circle responsive-img"> <!-- notice the "circle" class -->
+              <div class="col s4">
+                <img src="http://www.gifwave.com/media/97580_shiba-inu-dog-transparent-transparency-doge.gif" alt="" class="circle responsive-img"> <!-- notice the "circle" class -->
+
               </div>
-              <div class="col s10">
+              <div class="col s8">
                 <span class="black-text">
-                  This is a square image. Add the "circle" class to it to make it appear circular.
+                  {{usuario.nombre}}
                 </span>
+                <div class="row">
+                  <div class="col s12">
+                    <a ng-click="pagina='imagen'">Cambiar Imagen</a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
+        <ul class="collection">
+          <li class="collection-item"><div>Mis Notificaciones<a ng-click="pagina='notificaciones'" class="secondary-content"><i class="material-icons">send</i></a></div></li>
+         <li class="collection-item"><div>Mis Datos<a ng-click="pagina='datos'" class="secondary-content"><i class="material-icons">send</i></a></div></li>
+         <li class="collection-item"><div>Mis Cursos<a ng-click="pagina='misCursos'" class="secondary-content"><i class="material-icons">send</i></a></div></li>
+         <li class="collection-item"><div>Crear un nuevo curso<a ng-click="pagina='crear'" class="secondary-content"><i class="material-icons">send</i></a></div></li>
+       </ul>
+        </div>
+        <div class="col l8 s12" ng-switch on="pagina">
+              <div ng-switch-when="notificaciones" class="row">
+                <h4>Ultimas notificaciones</h3>
+
+              </div>
+              <form ng-submit=guardarImagen(imagen) ng-switch-when="imagen" class="row">
+                <div class="col s12">
+                  <h4>Mi Imagen</h3>
+                    <div class="file-field input-field">
+                    <div class="btn">
+                    <span>Imagen</span>
+                    <input file-model="imagen" type="file">
+                  </div>
+                  <div class="file-path-wrapper">
+                    <input   class="file-path validate" type="text">
+                  </div>
+                  </div>
+                  <br>
+                  <button type="submit" class="btn">Guardar</button>
+                </div>
+
+              </form>
+              <div ng-switch-when="datos" class="row">
+                <h4>Mis Datos</h3>
+
+              </div>
+              <div ng-switch-when="misCursos" class="row">
+                <h4>Mis Cursos</h3>
+
+              </div>
+              <div ng-switch-when="crear" class="row">
+                <form class="col s12" ng-submit="crearCurso(curso)">
+
+                  <h4>Nuevo Curso</h3>
+                  <div class="input-field col s12">
+                    <i class="material-icons prefix">mode_edit</i>
+                    <input type="text" ng-model="curso.titulo">
+                    <label>Titulo del curso</label>
+                  </div>
+                  <div class="input-field col s12">
+                    <i class="material-icons prefix">room</i>
+                    <input type="text" ng-model="curso.sede">
+                    <label>Sede</label>
+                  </div>
+                  <div class="input-field col s12">
+                    <i class="material-icons prefix">schedule</i>
+                    <input type="text"  input-date ng-model="curso.fecha">
+                    <label>Fecha</label>
+                  </div>
+                  <div class="input-field col s12">
+                    <i class="material-icons prefix">schedule</i>
+                      <input type="text"  input-date ng-model="curso.fechaFinalizacion">
+                    <label>Fecha de finalización</label>
+                  </div>
+                  <div class="input-field col s12">
+                    <i class="material-icons prefix">perm_identity</i>
+                    <input type="text" ng-model="curso.nombreFacilitador">
+                    <label>Facilitador</label>
+                  </div>
+                    <div class="col s12">
+                      <input ng-model="curso.mostrarPrecio" id="precio" type="checkbox"><label for="precio"> Mostrar precio</label>
+                    </div>
+                      <div class="input-field col s12">
+                  <textarea id="textarea1" ng-model="curso.contenido" class="materialize-textarea"></textarea>
+                  <label for="textarea1">Descripción general del curso</label>
+                  </div>
+                  <input type="text" ng-model="curso.idCategoria" value="1">
+                  <button type="submit">Guardar</button>
+                </form>
+
+              </div>
         </div>
       </div>
     </div>
   </div>
-    <div class="fixed-action-btn horizontal" style="bottom: 70%; right: 24px;">
-   <a class="btn-floating btn-large red">
-     <i class="large material-icons">mode_edit</i>
-   </a>
-   <ul>
-     <li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
-     <li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
-     <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
-     <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
-   </ul>
- </div>
 </div>
